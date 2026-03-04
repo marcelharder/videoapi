@@ -128,3 +128,4 @@
 /home/marcel/Code/videoapi/obj/Debug/net9.0/rjsmrazor.dswa.cache.json
 /home/marcel/Code/videoapi/obj/Debug/net9.0/rjsmcshtml.dswa.cache.json
 /home/marcel/Code/videoapi/obj/Debug/net9.0/staticwebassets.build.json.cache
+/home/marcel/Code/videoapi/obj/Debug/net9.0/videoapi.sourcelink.json

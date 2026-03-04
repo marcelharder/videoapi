@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using videoapi.Data;
 using videoapi.Models;
 using videoapi.Data.Seed;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -70,7 +71,7 @@ app.MapPost("/videos/upload", async (HttpRequest req, IOptions<VideoSettings> se
     using var stream = File.Create(fullPath);
     await file.CopyToAsync(stream);
 
-    var video = new Video { Title = title, FilePath = fileName };
+    var video = new Video { Title = title, FilePath = fileName, ContentType = file.ContentType };
     db.Videos.Add(video);
     await db.SaveChangesAsync();
     return Results.Created($"/videos/{video.Id}", video);
@@ -86,8 +87,16 @@ app.MapGet("/videos/{id}/stream", async (int id, ApplicationDbContext db, IOptio
     if (!File.Exists(filePath))
         return Results.NotFound();
 
+    // determine content type based on file extension or stored metadata
+    var provider = new FileExtensionContentTypeProvider();
+    if (!provider.TryGetContentType(video.FilePath, out var contentType))
+    {
+        // fall back to value saved in database or generic octet-stream
+        contentType = video.ContentType ?? "application/octet-stream";
+    }
+
     var stream = File.OpenRead(filePath);
-    return Results.File(stream, "video/mp4", enableRangeProcessing: true);
+    return Results.File(stream, contentType, enableRangeProcessing: true);
 });
 
 // perform data seeding before the app starts listening
