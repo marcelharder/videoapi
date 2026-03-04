@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "PC0voXRcAFVf1Jb4sisbrj643R78AAhd0O0WdarnUoY=",
+  "Source": "videoapi",
+  "BasePath": "_content/videoapi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

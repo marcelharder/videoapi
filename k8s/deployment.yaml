@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: videoapi
+  labels:
+    app: videoapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: videoapi
+  template:
+    metadata:
+      labels:
+        app: videoapi
+    spec:
+      containers:
+      - name: videoapi
+        image: registry.example.com/videoapi:latest # replace with your registry/image tag
+        ports:
+        - containerPort: 80
+        env:
+        - name: ConnectionStrings__DefaultConnection
+          valueFrom:
+            secretKeyRef:
+              name: videoapi-secrets
+              key: default-connection
+        - name: VideoSettings__NasBasePath
+          value: /mnt/nas/videos
+        volumeMounts:
+        - name: nas-storage
+          mountPath: /mnt/nas/videos
+      volumes:
+      - name: nas-storage
+        persistentVolumeClaim:
+          claimName: nas-pvc

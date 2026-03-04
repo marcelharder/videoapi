@@ -1,0 +1,12 @@
+bin/
+obj/
+.vs/
+*.md
+*.User
+*.suo
+*.log
+**/Migrations/
+**/*.db
+**/node_modules/
+**/.DS_Store
+**/videos/
