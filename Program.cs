@@ -4,6 +4,9 @@ using videoapi.Models;
 using videoapi.Data.Seed;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Options;
+using videoapi.Helpers;
+using videoapi.Dtos;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +31,10 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 var summaries = new[]
 {
@@ -51,8 +57,34 @@ app.MapGet("/weatherforecast", () =>
 
 // video endpoints
 
-app.MapGet("/videos", async (ApplicationDbContext db) =>
-    await db.Videos.ToListAsync());
+app.MapGet("/video", async (HttpContext context, [FromServices] ApplicationDbContext db) =>
+{
+    var query = context.Request.Query;
+
+    // Parse query parameters
+    var vp = new VideoParams
+    {
+        PageNumber = int.TryParse(query["PageNumber"], out var pageNumber) ? pageNumber : 1,
+        PageSize = int.TryParse(query["PageSize"], out var pageSize) ? pageSize : 10,
+        Category = int.TryParse(query["Category"], out var category) ? category : 0
+    };
+
+    if (vp.Category == 0)
+    {
+        return Results.BadRequest("Category is required.");
+    }
+
+    IQueryable<VideoDto> queryable = db.Videos.Select(v => new VideoDto
+    {
+        Id = v.Id,
+        Title = v.Title,
+        Description = v.Description ?? string.Empty,
+        Duration = (TimeSpan)(v.Duration ?? TimeSpan.Zero)
+    });
+
+    return Results.Ok(await PagedList<VideoDto>.CreateAsync(queryable, vp.PageNumber, vp.PageSize));
+});
+
 
 app.MapPost("/videos", async (ApplicationDbContext db, Video video) =>
 {
