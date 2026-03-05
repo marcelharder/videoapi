@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("videoapi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f84d98984dbfe8684bb08786daeb25df36806ac1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b857c5f5f661f42eb915c7d77570f2fe0b29f59")]
 [assembly: System.Reflection.AssemblyProductAttribute("videoapi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("videoapi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

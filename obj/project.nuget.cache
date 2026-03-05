@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TYjvaVZtSN0=",
+  "dgSpecHash": "Dz+drfV2YC0=",
   "success": true,
-  "projectFilePath": "/home/marcel/Code/videoapi/videoapi.csproj",
+  "projectFilePath": "/home/marcel/code/videoapi-05-03-2026/videoapi/videoapi.csproj",
   "expectedPackageFiles": [
     "/home/marcel/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/marcel/.nuget/packages/microsoft.aspnetcore.openapi/9.0.11/microsoft.aspnetcore.openapi.9.0.11.nupkg.sha512",

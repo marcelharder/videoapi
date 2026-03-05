@@ -51,6 +51,9 @@ app.MapGet("/weatherforecast", () =>
 
 // video endpoints
 
+app.MapGet("/videos", async (ApplicationDbContext db) =>
+    await db.Videos.ToListAsync());
+
 app.MapPost("/videos", async (ApplicationDbContext db, Video video) =>
 {
     db.Videos.Add(video);

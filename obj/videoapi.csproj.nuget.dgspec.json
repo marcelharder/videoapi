@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/marcel/Code/videoapi/videoapi.csproj": {}
+    "/home/marcel/code/videoapi-05-03-2026/videoapi/videoapi.csproj": {}
   },
   "projects": {
-    "/home/marcel/Code/videoapi/videoapi.csproj": {
+    "/home/marcel/code/videoapi-05-03-2026/videoapi/videoapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/marcel/Code/videoapi/videoapi.csproj",
+        "projectUniqueName": "/home/marcel/code/videoapi-05-03-2026/videoapi/videoapi.csproj",
         "projectName": "videoapi",
-        "projectPath": "/home/marcel/Code/videoapi/videoapi.csproj",
+        "projectPath": "/home/marcel/code/videoapi-05-03-2026/videoapi/videoapi.csproj",
         "packagesPath": "/home/marcel/.nuget/packages/",
-        "outputPath": "/home/marcel/Code/videoapi/obj/",
+        "outputPath": "/home/marcel/code/videoapi-05-03-2026/videoapi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/marcel/.nuget/NuGet/NuGet.Config"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/marcel/.dotnet/sdk/9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

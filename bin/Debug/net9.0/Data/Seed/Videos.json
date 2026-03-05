@@ -1,18 +1,19 @@
 [
   {
-    "title": "Intro to Video API",
+    "title": "Road ends",
     "description": "A short demonstration clip",
-    "filePath": "intro.mp4",
+    "filePath": "RoadEnds.mp4",
     "uploadedAt": "2025-01-01T12:00:00Z",
     "thumbnailPath": "thumbs/intro.jpg",
     "duration": "00:02:30",
     "contentType": "video/mp4"
   },
   {
-    "title": "Advanced Streaming",
+    "title": "Showgirks",
     "description": "Deep dive into range requests and buffering",
-    "filePath": "streaming.mp4",
+    "filePath": "Showgirls.mp4",
     "uploadedAt": "2025-02-15T08:30:00Z",
+    "thumbnailPath": "thumbs/intro.jpg",
     "duration": "00:10:00",
     "contentType": "video/mp4"
   }
