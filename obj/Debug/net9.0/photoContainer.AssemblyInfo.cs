@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("photoContainer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f88071ef37d498e66b6f4ad8d92d1677ab02d0d")]
 [assembly: System.Reflection.AssemblyProductAttribute("photoContainer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("photoContainer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
